@@ -14,19 +14,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fx:id="text1" layoutX="2.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flota de Jugador 1" textAlignment="CENTER" wrappingWidth="548.4508361816406">
+      <Text fx:id="text1" disable="true" layoutX="2.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flota de Jugador 1" textAlignment="CENTER" wrappingWidth="548.4508361816406">
          <font>
             <Font name="Javanese Text" size="29.0" />
          </font>
       </Text>
-      <Line fx:id="line2" endX="438.00006103515625" endY="455.0" layoutX="112.0" layoutY="145.0" startX="438.00006103515625" startY="-145.0" />
-      <Text fx:id="text2" layoutX="547.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flota de Jugador 2" textAlignment="CENTER" wrappingWidth="556.5408935546875">
+      <Line fx:id="line2" disable="true" endX="438.00006103515625" endY="455.0" layoutX="112.0" layoutY="145.0" startX="438.00006103515625" startY="-145.0" />
+      <Text fx:id="text2" disable="true" layoutX="547.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flota de Jugador 2" textAlignment="CENTER" wrappingWidth="556.5408935546875">
          <font>
             <Font name="Javanese Text" size="29.0" />
          </font>
       </Text>
-      <Line fx:id="line1" endX="999.0" endY="19.873798370361328" layoutX="101.0" layoutY="42.0" startX="-101.0" startY="19.87381362915039" />
-      <AnchorPane fx:id="anchorPane1" layoutX="22.0" layoutY="75.0">
+      <Line fx:id="line1" disable="true" endX="999.0" endY="19.873798370361328" layoutX="101.0" layoutY="42.0" startX="-101.0" startY="19.87381362915039" />
+      <AnchorPane fx:id="anchorPane1" disable="true" layoutX="22.0" layoutY="75.0">
          <children>
             <GridPane fx:id="gridPane1" alignment="CENTER" layoutX="37.0" layoutY="50.0" prefHeight="440.0" prefWidth="440.0">
               <columnConstraints>
@@ -170,7 +170,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPane2" layoutX="590.0" layoutY="75.0">
+      <AnchorPane fx:id="anchorPane2" disable="true" layoutX="590.0" layoutY="75.0">
          <children>
             <GridPane fx:id="gridPane2" alignment="CENTER" layoutX="24.0" layoutY="50.0" prefHeight="440.0" prefWidth="440.0">
                <columnConstraints>

@@ -1,4 +1,5 @@
 package com.example.hundirlaflota;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -38,8 +39,18 @@ public class GameController {
     int totalBarcos1 = 0;
     int totalBarcos2 = 0;
 
+
     @FXML
     public void initialize() throws InterruptedException {
+
+        gridPane1.setDisable(false);
+        gridPane2.setDisable(false);
+        anchorPane1.setDisable(false);
+        anchorPane2.setDisable(false);
+        text1.setDisable(false);
+        text2.setDisable(false);
+        line1.setDisable(false);
+        line2.setDisable(false);
 
         //Cargamos los barcos en la lista de barcos 1
         System.out.println("Barcos del gridPane1:");
@@ -235,4 +246,6 @@ public class GameController {
             textFinal.setText("El Jugador 1 ha hundido la flota del Jugador 2");
         }
     }
+
+
 }
