@@ -32,6 +32,9 @@ public class GameController {
     private Line line1;
     @FXML
     private Line line2;
+    @FXML
+    private Button reiniciarButton;
+
 
     //Creamos las listas de barcos
     ArrayList<Barco> barcos1 = new ArrayList<>();
@@ -39,9 +42,11 @@ public class GameController {
     int totalBarcos1 = 0;
     int totalBarcos2 = 0;
 
-
+    String jugador1Nombre, jugador2Nombre;
     @FXML
-    public void initialize() throws InterruptedException {
+    public void initialize(String jugador1TextField, String jugador2TextField) throws InterruptedException {
+        jugador1Nombre=jugador1TextField;
+        jugador2Nombre=jugador2TextField;
 
         gridPane1.setDisable(false);
         gridPane2.setDisable(false);
@@ -51,6 +56,9 @@ public class GameController {
         text2.setDisable(false);
         line1.setDisable(false);
         line2.setDisable(false);
+
+        text1.setText(text1.getText()+jugador1Nombre);
+        text2.setText(text2.getText()+jugador2Nombre);
 
         //Cargamos los barcos en la lista de barcos 1
         System.out.println("Barcos del gridPane1:");
@@ -232,7 +240,9 @@ public class GameController {
             line1.setVisible(false);
             line2.setVisible(false);
             textFinal.setDisable(false);
-            textFinal.setText("El Jugador 2 ha hundido la flota del Jugador 1");
+            textFinal.setText(jugador1Nombre+" ha hundido la flota de "+jugador2Nombre);
+            reiniciarButton.setDisable(false);
+            reiniciarButton.setVisible(true);
         } else if (totalBarcos2==0){
             gridPane1.setVisible(false);
             gridPane2.setVisible(false);
@@ -243,9 +253,14 @@ public class GameController {
             line1.setVisible(false);
             line2.setVisible(false);
             textFinal.setDisable(false);
-            textFinal.setText("El Jugador 1 ha hundido la flota del Jugador 2");
+            textFinal.setText(jugador2Nombre+" ha hundido la flota de "+jugador1Nombre);
+            reiniciarButton.setDisable(false);
+            reiniciarButton.setVisible(true);
         }
     }
 
+    public void reiniciar(){
+        Main.launch();
+    }
 
 }
