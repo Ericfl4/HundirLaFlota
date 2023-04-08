@@ -259,8 +259,4 @@ public class GameController {
         }
     }
 
-    public void reiniciar(){
-        Main.launch();
-    }
-
 }
