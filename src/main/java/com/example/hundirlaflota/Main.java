@@ -11,6 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ResourceBundle;
 public class Main extends Application {
 
@@ -19,7 +22,7 @@ public class Main extends Application {
     @FXML
     private TextField jugador2TextField;
 
-    GameController gameController = new GameController();
+    GameController gameController;
     Parent root;
     Scene scene;
     FXMLLoader loader;
@@ -32,18 +35,24 @@ public class Main extends Application {
         scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
     public void empezarJuegoButtonAction(ActionEvent actionEvent) throws Exception {
+        File file = new File("jugadores");
+        FileWriter fileWriter = new FileWriter(file);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter.write(jugador1TextField.getText());
+        bufferedWriter.newLine();
+        bufferedWriter.write(jugador2TextField.getText());
+        bufferedWriter.close();
         loader = new FXMLLoader(getClass().getResource("tablero.fxml"));
-        loader.setController(gameController);
         root = loader.load();
+        gameController=loader.getController();
         scene = new Scene(root);
         Stage primaryStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         primaryStage.setScene(scene);
         primaryStage.show();
-        jugador1TextField.getText();
-        gameController.initialize(jugador1TextField.getText(), jugador2TextField.getText());
     }
 
     public static void main(String[] args) {
