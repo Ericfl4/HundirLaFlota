@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,29 +11,118 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hundirlaflota.Main">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hundirlaflota.Main">
    <children>
-      <GridPane alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="50.0" prefWidth="500.0">
+      <Text fx:id="textoHost" disable="true" layoutX="125.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conectar como Host" visible="false" wrappingWidth="350.6666666666667">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <GridPane fx:id="nombreGridPane" alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="50.0" prefWidth="500.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Nombre del jugador 1:" />
-            <Label text="Nombre del jugador 2:" GridPane.rowIndex="1" />
-            <TextField fx:id="jugador1TextField"  promptText="Jugador 1" GridPane.columnIndex="1" />
-            <TextField fx:id="jugador2TextField"  promptText="Jugador 2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Indique su nombre:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="nombreJugadorTextField" promptText="Eduardo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
          </children>
       </GridPane>
-      <Text layoutX="107.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introducid vuestros datos para comenzar el juego" wrappingWidth="385.4700927734375">
+      <Text fx:id="textoTitulo" layoutX="180.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hundir la flota" wrappingWidth="240.66666666666669">
          <font>
-            <Font size="17.0" />
+            <Font size="38.0" />
          </font>
       </Text>
-      <Button fx:id="jugarButton" onAction="#empezarJuegoButtonAction" layoutX="263.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Jugar" />
+      <Button fx:id="botonHost" layoutX="50.0" layoutY="201.0" mnemonicParsing="false" onAction="#conectarseComoHost" prefHeight="43.0" prefWidth="241.0" text="Conectarse como Host">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="botonInvitado" layoutX="312.0" layoutY="200.0" mnemonicParsing="false" onAction="#conectarseComoInvitado" prefHeight="43.0" prefWidth="257.0" text="Conectarse como invitado">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <GridPane fx:id="hostGridPane" alignment="CENTER" disable="true" layoutX="60.0" layoutY="110.0" prefHeight="50.0" prefWidth="500.0" vgap="25.0" visible="false">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Indique su puerto:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="puertoTextFieldHost" promptText="5555" text="5555" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+      <Button fx:id="botonConfirmarHost" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutY="222.0" mnemonicParsing="false" onAction="#empezarJuegoButtonAction" prefWidth="600.0" style="-fx-background-color: #5050ce; color: white;" text="Confirmar" textFill="WHITE" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="botonConfirmarInvitado" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutY="222.0" mnemonicParsing="false" onAction="#confirmarComoInvitado" prefWidth="600.0" style="-fx-background-color: #5050ce; color: white;" text="Confirmar" textFill="WHITE" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <GridPane fx:id="invitadoGridPane" alignment="CENTER" disable="true" layoutX="60.0" layoutY="110.0" prefHeight="50.0" prefWidth="500.0" vgap="25.0" visible="false">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Indique su puerto:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="puertoTextFieldInvitado" promptText="5555" text="5555" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label text="Indique su ip:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ipTextFieldInvitado" promptText="localhost" text="localhost" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+      <Text fx:id="textoInvitado" disable="true" layoutX="111.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conectar como Invitado" visible="false" wrappingWidth="401.99997965494794">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

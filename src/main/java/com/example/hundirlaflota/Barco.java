@@ -25,6 +25,6 @@ public class Barco {
 
     @Override
     public String toString() {
-        return "Barco(x=" + (x+1) + ", y=" + (y+1) + ")\n";
+        return (x+1)+","+(y+1);
     }
 }
