@@ -227,17 +227,6 @@ public class GameController implements Initializable {
 
                     if (button.getStyle() != "-fx-background-color: #f89292;") {
                         if (button.getStyle() != "-fx-background-color: #9292f8;") {
-                            File jugada = new File("jugada");
-                            FileWriter fileWriterjugada = null;
-                            try {
-                                fileWriterjugada = new FileWriter(jugada);
-                                BufferedWriter bufferedWriterjugada = new BufferedWriter(fileWriterjugada);
-                                bufferedWriterjugada.write((finalI+1)+","+(finalJ+1));
-                                bufferedWriterjugada.close();
-                                fileWriterjugada.close();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
 
                             for (Barco b : listaBarcos2) {
                                 if (finalI == b.getX() && finalJ == b.getY()) {
